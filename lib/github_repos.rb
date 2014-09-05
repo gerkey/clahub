@@ -25,6 +25,10 @@ class GithubRepos
     @github.repos.statuses.create(user_name, repo_name, sha, params)
   end
 
+  def create_comment(user_name, repo_name, sha, params)
+    @github.repos.comments.create(user_name, repo_name, sha, params)
+  end
+
   def get_pulls(user_name, repo_name)
     @github.pull_requests.list(user_name, repo_name)
   end
