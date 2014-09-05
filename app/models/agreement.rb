@@ -19,7 +19,7 @@ class Agreement < ActiveRecord::Base
     hook_inputs = {
       'name' => 'web',
       'config' => {
-        'url' => "#{HOST}/repo_hook"
+        'url' => "#{HOST}:#{ENV['PORT']}/repo_hook"
       }
     }
 
