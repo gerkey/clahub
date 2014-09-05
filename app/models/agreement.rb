@@ -28,8 +28,7 @@ class Agreement < ActiveRecord::Base
       self.update_attribute(:github_repo_hook_id, response['id'])
     else
       ids = []
-      repos = other_repo_names[0,2]
-      for repo in repos
+      for repo in other_repo_names
         puts "Creating hook for #{user_name}/#{repo}"
         response = GithubRepos.new(self.user).create_hook(user_name, repo, hook_inputs)
         ids << response['id']
