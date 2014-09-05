@@ -3,6 +3,10 @@ module ApplicationHelper
     "#{repo.owner.login}/#{repo.name}"
   end
 
+  def org_slash_all(org)
+    "#{org.login}/ALL"
+  end
+
   def body_class
     qualified_controller_name = controller.controller_path.gsub('/','-')
     "#{qualified_controller_name} #{qualified_controller_name}-#{controller.action_name}"
